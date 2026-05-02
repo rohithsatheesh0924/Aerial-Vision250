@@ -14,19 +14,9 @@ import {
   Zap,
   Globe
 } from 'lucide-react';
-
-import VisualStories from '../components/VisualStories';
 import { NavHashLink as HashLink } from 'react-router-hash-link';
 
-// Animation Variants
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2, delayChildren: 0.3 }
-  }
-};
-
+// --- Animation Variants ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
@@ -94,15 +84,10 @@ const Home = () => {
     return () => clearInterval(timer); 
   }, [slides.length]);
 
-  const textVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 30 },
-    visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
-  };
-
   return (
     <div className="bg-black text-white overflow-x-hidden">
       
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION - PROFESSIONAL DRONE ANIMATION */}
       <section id="home" className="py-12 md:py-20 px-8 md:px-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative overflow-hidden">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideInLeft}>
           <div className="flex items-center gap-3 mb-6">
@@ -143,24 +128,69 @@ const Home = () => {
           </div>
         </motion.div>
         
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={wipeReveal} className="relative rounded-sm overflow-hidden shadow-2xl border border-white/5 h-[400px] md:h-[550px]">
-          <img src="https://images.unsplash.com/photo-1473960236041-7c505555d045?auto=format&fit=crop&w=1200&q=80" className="w-full h-full object-cover" alt="Elite Drone Tech" />
-          <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/10 p-3 flex items-center gap-2">
-            <Disc size={16} className="text-[#BFA388]" />
-            <div className="flex flex-col">
-              <span className="text-[8px] text-white font-black uppercase tracking-widest leading-none">DJI Air 3S</span>
-              <span className="text-[6px] text-gray-400 uppercase tracking-widest italic leading-none">Primary Unit</span>
+        {/* DRONE 3D ANIMATION AREA */}
+        <motion.div 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true }} 
+          variants={wipeReveal} 
+          className="relative h-[450px] md:h-[600px] flex items-center justify-center group"
+        >
+          {/* Floating Drone Image with Animation */}
+          <motion.div
+            animate={{ 
+              y: [0, -20, 0],
+              rotate: [0, 1, -1, 0]
+            }}
+            transition={{ 
+              duration: 5, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            className="relative z-20 w-full max-w-[500px]"
+          >
+            <img 
+              src="https://pldrone.com/wp-content/uploads/2023/10/dji_air_3_1.png" 
+              alt="DJI Air 3S Cinematic Unit" 
+              className="w-full h-auto drop-shadow-[0_35px_35px_rgba(191,163,136,0.2)] transition-transform duration-700 group-hover:scale-110" 
+            />
+          </motion.div>
+
+          {/* BACKGROUND TECH CIRCLES */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+            <div className="absolute w-[300px] h-[300px] border border-[#BFA388] rounded-full animate-[ping_10s_linear_infinite]"></div>
+            <div className="absolute w-[450px] h-[450px] border border-white/10 rounded-full"></div>
+            <div className="absolute w-[200px] h-[200px] border-t-2 border-[#BFA388] rounded-full animate-spin"></div>
+          </div>
+
+          {/* HUD SCANNING LINE */}
+          <motion.div 
+            animate={{ top: ['0%', '100%', '0%'] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#BFA388]/40 to-transparent z-30 pointer-events-none"
+          />
+
+          {/* BOTTOM DATA TAGS */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-md border border-white/10 p-4 flex items-center gap-6 z-40 whitespace-nowrap">
+            <div className="flex flex-col text-center">
+              <span className="text-[7px] text-gray-500 uppercase tracking-widest leading-none mb-1">Model</span>
+              <span className="text-[10px] text-white font-black uppercase tracking-widest">AIR 3S</span>
+            </div>
+            <div className="w-[1px] h-8 bg-white/10"></div>
+            <div className="flex flex-col text-center">
+              <span className="text-[7px] text-gray-500 uppercase tracking-widest leading-none mb-1">Optics</span>
+              <span className="text-[10px] text-[#BFA388] font-black uppercase tracking-widest">4K HDR</span>
             </div>
           </div>
         </motion.div>
       </section>
 
-      {/* 2. IMAGE MARQUEE */}
+      {/* 2. IMAGE MARQUEE - PURE VISUAL FLOW */}
       <section className="bg-black py-10 overflow-hidden border-y border-white/5">
         <div className="relative flex animate-marquee gap-4">
           {[...images, ...images].map((src, index) => (
-            <div key={index} className="w-[300px] md:w-[450px] h-[300px] flex-shrink-0 overflow-hidden rounded-sm border border-white/10">
-              <img src={src} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Work" />
+            <div key={index} className="w-[300px] md:w-[450px] h-[300px] flex-shrink-0 overflow-hidden rounded-sm border border-white/10 group">
+              <img src={src} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" alt="Cinematography" />
             </div>
           ))}
         </div>
@@ -193,7 +223,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 4. THE VISION (Strategy Section) */}
+      {/* 4. THE VISION STRATEGY */}
       <section className="py-24 bg-[#050505] border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
           <div className="text-center mb-16">
@@ -204,12 +234,12 @@ const Home = () => {
             <InfoCard 
               icon={<Zap size={32} strokeWidth={1} className="mx-auto text-[#BFA388]" />} 
               title="Scale & Tech" 
-              desc="Expanding from elite Air 3S drone services to full-scale DSLR cinematography, lighting, and professional studio systems." 
+              desc="Expanding from elite Air 3S drone services to full-scale DSLR cinematography and professional studio systems." 
             />
             <InfoCard 
               icon={<Globe size={32} strokeWidth={1} className="mx-auto text-[#BFA388]" />} 
               title="Regional Reach" 
-              desc="Building a network of production branches across Tamil Nadu, handling large-scale commercial and documentary projects." 
+              desc="Building a network of production branches across Tamil Nadu, handling large-scale commercial projects." 
             />
             <InfoCard 
               icon={<Award size={32} strokeWidth={1} className="mx-auto text-[#BFA388]" />} 
@@ -220,7 +250,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 5. DYNAMIC SHOWCASE SLIDER */}
+      {/* 5. FINAL SHOWCASE CTA */}
       <section className="relative h-[80vh] w-full bg-black overflow-hidden border-t border-white/5">
         <AnimatePresence mode="wait">
           <motion.div
@@ -236,14 +266,14 @@ const Home = () => {
         <div className="absolute inset-0 bg-black/80 z-20"></div>
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative z-30 h-full flex flex-col justify-center items-center text-center px-6">
-          <motion.span variants={textVariants} className="text-[10px] uppercase tracking-[0.5em] text-[#BFA388] font-bold mb-4">
+          <motion.span className="text-[10px] uppercase tracking-[0.5em] text-[#BFA388] font-bold mb-4">
             Aerial Vision India
           </motion.span>
-          <motion.h1 variants={textVariants} className="serif text-5xl md:text-8xl leading-tight mb-8 font-black uppercase tracking-tighter text-white">
+          <motion.h1 className="serif text-5xl md:text-8xl leading-tight mb-8 font-black uppercase tracking-tighter text-white">
             ELEVATING <br /> <span className="font-light" style={{color: '#BFA388'}}>PERSPECTIVE.</span>
           </motion.h1>
           <HashLink smooth to="/contact#contact-form">
-            <motion.button variants={textVariants} className="bg-[#BFA388] text-black px-12 py-5 text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white transition-all">
+            <motion.button whileHover={{ scale: 1.05 }} className="bg-[#BFA388] text-black px-12 py-5 text-[10px] font-black uppercase tracking-[0.3em] hover:bg-white transition-all">
               Launch Project
             </motion.button>
           </HashLink>
@@ -253,7 +283,6 @@ const Home = () => {
   );
 };
 
-// Sub-components
 const InfoCard = ({ icon, title, desc }) => (
   <div className="p-8 border border-white/5 bg-[#0A0A0A] transition hover:border-[#BFA388]/40 h-full group">
     <div className="mb-6 group-hover:scale-110 transition-transform">{icon}</div>
