@@ -88,103 +88,84 @@ const Home = () => {
     <div className="bg-black text-white overflow-x-hidden">
       
       {/* 1. HERO SECTION - PROFESSIONAL DRONE ANIMATION */}
-      <section id="home" className="py-12 md:py-20 px-8 md:px-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative overflow-hidden">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideInLeft}>
-          <div className="flex items-center gap-3 mb-6">
-            <span className="w-6 h-[1px] bg-[#BFA388]"></span>
-            <span className="text-[8px] md:text-[9px] uppercase tracking-[0.4em] text-[#BFA388] font-bold">
-              Elite Media Production
-            </span>
-          </div>
+    <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden px-8 md:px-10 max-w-7xl mx-auto">
+  
+  {/* 1. BACKGROUND VIDEO LAYER */}
+  <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-cover select-none"
+    >
+      <source src="./V1.mp4" type="video/mp4" />
+    </video>
+  </div>
 
-          <h1 className="text-5xl md:text-7xl mb-4 leading-[0.95] font-black uppercase tracking-tighter text-white serif">
-            Aerial <br /> 
-            <span className="text-[#BFA388]">Vision 250.</span>
-          </h1>
+  {/* 2. THE BLACK LAYER MASK OVERLAY - Deepened opacity for high-end text contrast */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70 z-10" />
 
-          <h2 className="text-[11px] md:text-xs text-white/70 uppercase tracking-[0.3em] font-medium mb-8">
-            Cinematic Excellence Across Tamil Nadu
-          </h2>
+  {/* 3. CENTERED CONTENT FRAME */}
+  <motion.div 
+    initial="hidden" 
+    whileInView="visible" 
+    viewport={{ once: true }} 
+    variants={fadeInUp} 
+    className="relative z-20 max-w-4xl w-full text-center flex flex-col items-center pt-16 pb-12"
+  >
+    {/* Minimalist Top Accent Header */}
+    <div className="flex items-center gap-4 mb-6 justify-center">
+      <span className="w-8 h-[1px] bg-[#BFA388]"></span>
+      <span className="text-[8px] md:text-[9px] uppercase tracking-[0.5em] text-[#BFA388] font-bold">
+        Elite Media Production
+      </span>
+      <span className="w-8 h-[1px] bg-[#BFA388]"></span>
+    </div>
 
-          <p className="text-gray-400 mb-8 leading-relaxed uppercase tracking-[0.15em] text-[10px] md:text-[11px] font-light max-w-sm border-l border-[#BFA388] pl-4">
-            <span className="text-white font-bold">Phase 1 Specialists.</span> Currently delivering high-end <span className="text-[#BFA388] italic">4K Drone Cinematography</span> for commercial, cultural, and corporate sectors.
-          </p>
+    {/* Master Brand Headline - Forces single line rendering across all screen breakpoints */}
+    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 font-black uppercase tracking-tighter text-white serif whitespace-nowrap leading-none">
+      Aerial <span className="text-[#BFA388]">Vision.</span>
+    </h1>
 
-          <div className="flex flex-wrap gap-4">
-            <HashLink smooth to="/pricing">
-              <motion.button 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-[#BFA388] text-black px-8 py-4 text-[9px] font-black uppercase tracking-[0.2em] hover:bg-white transition-all duration-500"
-              >
-                View Services
-              </motion.button>
-            </HashLink>
-            <HashLink smooth to="/contact#contact-form">
-              <button className="border border-white/10 text-white px-8 py-4 text-[9px] font-black uppercase tracking-[0.2em] hover:border-[#BFA388] transition-all duration-500">
-                Start Project
-              </button>
-            </HashLink>
-          </div>
-        </motion.div>
-        
-        {/* DRONE 3D ANIMATION AREA */}
-        <motion.div 
-          initial="hidden" 
-          whileInView="visible" 
-          viewport={{ once: true }} 
-          variants={wipeReveal} 
-          className="relative h-[450px] md:h-[600px] flex items-center justify-center group"
+    {/* Sub-headline */}
+    <h2 className="text-[10px] md:text-xs text-white/70 uppercase tracking-[0.4em] font-medium mb-10">
+      Cinematic Excellence Across Tamil Nadu
+    </h2>
+
+    {/* Professional Context Paragraph Box */}
+    <div className="border border-white/5 bg-black/40 backdrop-blur-md p-6 max-w-md w-full mb-12 border-l-2 border-l-[#BFA388] transition-colors duration-500 hover:border-white/10">
+      <p className="text-gray-400 leading-relaxed uppercase tracking-[0.15em] text-[10px] md:text-[11px] font-light text-center">
+        <span className="text-white font-bold">Phase 1 Specialists.</span> Currently delivering high-end <span className="text-[#BFA388] italic">4K Drone Cinematography</span> for commercial, cultural, and corporate sectors.
+      </p>
+    </div>
+
+    {/* Action Call Array */}
+    <div className="flex flex-wrap gap-4 sm:gap-6 justify-center w-full">
+      <HashLink smooth to="/pricing">
+        <motion.button 
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          className="bg-[#BFA388] text-black px-10 py-4 text-[9px] font-black uppercase tracking-[0.25em] hover:bg-white transition-all duration-500 shadow-xl shadow-black/20"
         >
-          {/* Floating Drone Image with Animation */}
-          <motion.div
-            animate={{ 
-              y: [0, -20, 0],
-              rotate: [0, 1, -1, 0]
-            }}
-            transition={{ 
-              duration: 5, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
-            className="relative z-20 w-full max-w-[500px]"
-          >
-            <img 
-              src="https://pldrone.com/wp-content/uploads/2023/10/dji_air_3_1.png" 
-              alt="DJI Air 3S Cinematic Unit" 
-              className="w-full h-auto drop-shadow-[0_35px_35px_rgba(191,163,136,0.2)] transition-transform duration-700 group-hover:scale-110" 
-            />
-          </motion.div>
-
-          {/* BACKGROUND TECH CIRCLES */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
-            <div className="absolute w-[300px] h-[300px] border border-[#BFA388] rounded-full animate-[ping_10s_linear_infinite]"></div>
-            <div className="absolute w-[450px] h-[450px] border border-white/10 rounded-full"></div>
-            <div className="absolute w-[200px] h-[200px] border-t-2 border-[#BFA388] rounded-full animate-spin"></div>
-          </div>
-
-          {/* HUD SCANNING LINE */}
-          <motion.div 
-            animate={{ top: ['0%', '100%', '0%'] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-            className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#BFA388]/40 to-transparent z-30 pointer-events-none"
-          />
-
-          {/* BOTTOM DATA TAGS */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-black/60 backdrop-blur-md border border-white/10 p-4 flex items-center gap-6 z-40 whitespace-nowrap">
-            <div className="flex flex-col text-center">
-              <span className="text-[7px] text-gray-500 uppercase tracking-widest leading-none mb-1">Model</span>
-              <span className="text-[10px] text-white font-black uppercase tracking-widest">AIR 3S</span>
-            </div>
-            <div className="w-[1px] h-8 bg-white/10"></div>
-            <div className="flex flex-col text-center">
-              <span className="text-[7px] text-gray-500 uppercase tracking-widest leading-none mb-1">Optics</span>
-              <span className="text-[10px] text-[#BFA388] font-black uppercase tracking-widest">4K HDR</span>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
+          View Services
+        </motion.button>
+      </HashLink>
+      
+      <HashLink smooth to="/contact#contact-form">
+        <motion.button 
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+          className="border border-white/10 text-white bg-black/20 backdrop-blur-sm px-10 py-4 text-[9px] font-black uppercase tracking-[0.25em] hover:border-[#BFA388] hover:text-[#BFA388] transition-all duration-500"
+        >
+          Start Project
+        </motion.button>
+      </HashLink>
+    </div>
+  </motion.div>
+</section>
       {/* 2. IMAGE MARQUEE - PURE VISUAL FLOW */}
       <section className="bg-black py-10 overflow-hidden border-y border-white/5">
         <div className="relative flex animate-marquee gap-4">
