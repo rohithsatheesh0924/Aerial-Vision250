@@ -36,12 +36,12 @@ const ContactForm = () => {
 
     setLoading(true);
 
-    // Replace these template strings with your specific EmailJS dashboard credentials
     const SERVICE_ID = "service_4whaxqi";
     const TEMPLATE_ID = "template_acl0onk";
     const PUBLIC_KEY = "nu56spVqPFU9I0ArF";
 
     try {
+      // Passes the fully validated DOM form element directly to EmailJS
       const result = await emailjs.sendForm(
         SERVICE_ID,
         TEMPLATE_ID,
@@ -59,13 +59,19 @@ const ContactForm = () => {
           background: "#050505", 
           color: "#fff"
         });
+        
+        // Reset form data state upon successful delivery
+        setFormData({
+          firstName: "", lastName: "", email: "", mobile: "",
+          service: "", date: "", time: "", location: ""
+        });
       }
     } catch (error) {
       console.error("EmailJS Error details:", error);
       Swal.fire({
         icon: "error", 
         title: "Submission Failed",
-        text: "Please check your connection and try again.",
+        text: "Please check your dashboard configurations and try again.",
         confirmButtonColor: "#BFA388", 
         background: "#050505", 
         color: "#fff"
@@ -218,10 +224,12 @@ const ContactForm = () => {
   );
 };
 
-const InputField = ({ label, ...props }) => (
+// Reusable Input Sub-component (Fixed to cleanly pass name down to DOM)
+const InputField = ({ label, name, ...props }) => (
   <div className="flex flex-col gap-3 group">
     <label className="text-[9px] uppercase tracking-[0.3em] text-white/80 font-bold ml-1 group-focus-within:text-[#BFA388] transition-colors">{label} *</label>
     <input 
+      name={name}
       {...props}
       className={`w-full bg-[#0A0A0A] border border-white/10 p-5 text-white focus:outline-none focus:border-[#BFA388] transition-all placeholder:text-gray-700 text-sm tracking-widest ${props.className || ""}`} 
     />
