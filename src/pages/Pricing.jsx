@@ -140,8 +140,8 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* 4. IMPORTANT NOTES */}
-     <section className="px-6 md:px-10 max-w-4xl mx-auto mb-32 p-12 bg-[#0A0A0A] border border-white/5 relative overflow-hidden">
+    {/* 4. IMPORTANT NOTES */}
+<section className="px-6 md:px-10 max-w-4xl mx-auto mb-32 p-12 bg-[#0A0A0A] border border-white/5 relative overflow-hidden">
   {/* Subtle Background Accent */}
   <div className="absolute top-0 right-0 w-32 h-32 bg-[#BFA388] opacity-[0.02] blur-[100px]"></div>
 
@@ -154,42 +154,43 @@ const Pricing = () => {
     </h4>
   </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-[10px] md:text-[11px] text-gray-500 uppercase tracking-[0.2em] leading-loose font-light">
+  {/* Changed base text color to high-visibility white layers */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-[10px] md:text-[11px] text-white/80 uppercase tracking-[0.2em] leading-loose font-light">
     <div className="space-y-6">
       <p className="flex items-start gap-3">
         <span className="text-[#BFA388] font-bold">•</span>
-        <span>A 50% non-refundable advance is required to secure your date in our production calendar.</span>
+        <span className="text-white/90">A 50% non-refundable advance is required to secure your date in our production calendar.</span>
       </p>
       <p className="flex items-start gap-3">
         <span className="text-[#BFA388] font-bold">•</span>
-        <span>Travel, on-site accommodation, and necessary police/local permissions are billed as additional costs.</span>
+        <span className="text-white/90">Travel, on-site accommodation, and necessary police/local permissions are billed as additional costs.</span>
       </p>
       <p className="flex items-start gap-3">
         <span className="text-[#BFA388] font-bold">•</span>
-        <span>Unedited raw footage is available upon request and must be collected via client-provided storage.</span>
+        <span className="text-white/90">Unedited raw footage is available upon request and must be collected via client-provided storage.</span>
       </p>
       <p className="flex items-start gap-3">
         <span className="text-[#BFA388] font-bold">•</span>
-        <span>Flight operations are strictly subject to weather conditions and airspace regulations (No-Fly Zones).</span>
+        <span className="text-white/90">Flight operations are strictly subject to weather conditions and airspace regulations (No-Fly Zones).</span>
       </p>
     </div>
 
     <div className="space-y-6">
       <p className="flex items-start gap-3">
         <span className="text-[#BFA388] font-bold">•</span>
-        <span>Final cinematic delivery timelines vary (7-14 days) based on the specific complexity of post-production.</span>
+        <span className="text-white/90">Final cinematic delivery timelines vary (7-14 days) based on the specific complexity of post-production.</span>
       </p>
       <p className="flex items-start gap-3">
         <span className="text-[#BFA388] font-bold">•</span>
-        <span>In the event of technical grounding due to rain or high winds, sessions will be rescheduled at no extra cost.</span>
+        <span className="text-white/90">In the event of technical grounding due to rain or high winds, sessions will be rescheduled at no extra cost.</span>
       </p>
       <p className="flex items-start gap-3">
         <span className="text-[#BFA388] font-bold">•</span>
-        <span>Aerial Vision retains the right to use captured media for studio portfolio and promotional purposes.</span>
+        <span className="text-white/90">Aerial Vision retains the right to use captured media for studio portfolio and promotional purposes.</span>
       </p>
       <p className="flex items-start gap-3">
         <span className="text-[#BFA388] font-bold">•</span>
-        <span>Balance payment must be settled in full upon completion of the shoot, prior to final edited delivery.</span>
+        <span className="text-white/90">Balance payment must be settled in full upon completion of the shoot, prior to final edited delivery.</span>
       </p>
     </div>
   </div>

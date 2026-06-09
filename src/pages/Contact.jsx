@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, MessageSquare, Clock } from 'lucide-react';
+import { Info, Mail, MapPin, Phone, Instagram, Youtube, MessageCircle, Clock } from 'lucide-react';
 import ContactForm from '../components/ContactForm';
 
 const Contact = () => {
@@ -62,12 +62,12 @@ const Contact = () => {
                 <ContactDetail 
                   icon={<Phone className="text-[#BFA388]" size={20} />} 
                   title="Phone" 
-                  content="+91 [Your Number]" 
+                  content="+91 81481 67943" 
                 />
                 <ContactDetail 
                   icon={<Mail className="text-[#BFA388]" size={20} />} 
                   title="Email" 
-                  content="hello@peacocksnaps.com" 
+                  content="aerialvision250@gmail.com" 
                 />
                 <ContactDetail 
                   icon={<Clock className="text-[#BFA388]" size={20} />} 
@@ -77,16 +77,46 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Social Links */}
+            {/* Social Links Module */}
             <div className="pt-8">
-               <h3 className="text-[10px] uppercase tracking-[0.3em] text-gray-500 font-bold mb-6">Direct Connect</h3>
-               <div className="flex gap-4">
-                  {['Instagram', 'Youtube', 'WhatsApp'].map((social) => (
-                    <button key={social} className="text-xs uppercase tracking-widest font-black border border-white/10 px-4 py-2 hover:bg-[#BFA388] hover:text-black transition-all">
-                      {social}
-                    </button>
-                  ))}
-               </div>
+              <h3 className="text-[10px] uppercase tracking-[0.3em] text-white/80 font-bold mb-6">
+                Direct Connect
+              </h3>
+              
+              <div className="flex gap-4">
+                {/* Instagram Link */}
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center justify-center border border-white/10 text-white p-3 hover:bg-[#BFA388] hover:text-black transition-all duration-300 group"
+                  aria-label="Instagram Profile"
+                >
+                  <Instagram size={16} className="transition-transform group-hover:scale-110" />
+                </a>
+
+                {/* YouTube Link */}
+                <a 
+                  href="https://youtube.com" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center justify-center border border-white/10 text-white p-3 hover:bg-[#BFA388] hover:text-black transition-all duration-300 group"
+                  aria-label="YouTube Channel"
+                >
+                  <Youtube size={16} className="transition-transform group-hover:scale-110" />
+                </a>
+
+                {/* WhatsApp Direct Chat Link */}
+                <a 
+                  href="https://wa.me/918148167943" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="flex items-center justify-center border border-white/10 text-white p-3 hover:bg-[#BFA388] hover:text-black transition-all duration-300 group"
+                  aria-label="WhatsApp Chat"
+                >
+                  <MessageCircle size={16} className="transition-transform group-hover:scale-110" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -96,20 +126,17 @@ const Contact = () => {
               <h2 className="text-2xl font-black uppercase tracking-widest serif mb-4">
                 Booking Inquiry
               </h2>
-              <p className="text-gray-500 text-xs uppercase tracking-[0.2em]">
+              <p className="text-white/70 text-xs uppercase tracking-[0.2em]">
                 Please fill the form below. We usually respond within 24 hours.
               </p>
             </div>
             
-            {/* Calling the ContactForm Component we created earlier */}
+            {/* Calling the ContactForm Component */}
             <ContactForm />
           </div>
 
         </div>
       </section>
-
-     
-
     </div>
   );
 };
@@ -122,7 +149,7 @@ const ContactDetail = ({ icon, title, content }) => (
     </div>
     <div>
       <h4 className="text-[10px] uppercase tracking-[0.2em] text-[#BFA388] font-bold mb-1">{title}</h4>
-      <p className="text-sm text-gray-300 uppercase tracking-widest leading-relaxed">{content}</p>
+      <p className="text-sm text-white/90 uppercase tracking-widest leading-relaxed">{content}</p>
     </div>
   </div>
 );

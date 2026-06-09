@@ -88,7 +88,7 @@ const Home = () => {
     <div className="bg-black text-white overflow-x-hidden">
       
       {/* 1. HERO SECTION - PROFESSIONAL DRONE ANIMATION */}
-   <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+  <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
   
   {/* 1. BROADCAST-GRADE BACKGROUND VIDEO LAYER (True Edge-to-Edge Fluid Span) */}
   <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
@@ -124,9 +124,16 @@ const Home = () => {
         <span className="w-8 h-[1px] bg-[#BFA388]"></span>
       </div>
 
+      {/* Professional Certified Pilot Badge Anchor */}
+      <div className="mb-6">
+        <span className="text-[8px] tracking-[0.3em] uppercase bg-[#BFA388]/10 text-[#BFA388] px-4 py-1.5 border border-[#BFA388]/20 font-mono font-bold rounded-none">
+          DGCA Certified Pilot Crew
+        </span>
+      </div>
+
       {/* Master Core Headline Frame */}
       <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 font-black uppercase tracking-tighter text-white serif whitespace-nowrap leading-none">
-        Aerial <span className="text-[#BFA388]">Vision.</span>
+        Aerial <span className="text-[#BFA388]">Vision</span>
       </h1>
 
       {/* Corporate Strategy Sub-headline */}
@@ -136,7 +143,7 @@ const Home = () => {
 
       {/* Precision Context Information Board */}
       <div className="border border-white/5 bg-black/40 backdrop-blur-md p-6 max-w-md w-full mb-12 border-l-2 border-l-[#BFA388] transition-colors duration-500 hover:border-white/10">
-        <p className="text-gray-400 leading-relaxed uppercase tracking-[0.15em] text-[10px] md:text-[11px] font-light text-center">
+        <p className="text-white/80 leading-relaxed uppercase tracking-[0.15em] text-[10px] md:text-[11px] font-light text-center">
           <span className="text-white font-bold">Phase 1 Specialists.</span> Currently delivering high-end <span className="text-[#BFA388] italic">4K Drone Cinematography</span> for commercial, cultural, and corporate sectors.
         </p>
       </div>

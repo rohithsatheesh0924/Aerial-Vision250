@@ -65,22 +65,40 @@ const ServicesPage = () => {
     <div className="bg-black text-white min-h-screen pt-32 pb-20 overflow-x-hidden">
       
       {/* HEADER SECTION */}
-      <section className="px-6 md:px-10 max-w-7xl mx-auto mb-32">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl"
-        >
-          <span className="text-[10px] uppercase tracking-[0.5em] text-[#BFA388] font-bold">The Aerial Vision Portfolio</span>
-          <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter serif mt-6 leading-none">
-            Aerial <br /> <span className="text-[#BFA388]">Solutions.</span>
-          </h1>
-          <p className="mt-8 text-gray-400 text-lg uppercase tracking-widest font-light leading-relaxed">
-            From commercial advertisements to spiritual festivals, we provide total visual coverage across Tamil Nadu.
-          </p>
-        </motion.div>
-      </section>
+   <section className="px-6 md:px-10 max-w-7xl mx-auto mb-32 min-h-[40vh] flex items-center justify-center">
+  <motion.div 
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="max-w-4xl w-full flex flex-col items-center text-center"
+  >
+    {/* Minimalist Top Accent Header */}
+    <div className="flex items-center gap-4 mb-6 justify-center">
+      <span className="w-8 h-[1px] bg-[#BFA388]"></span>
+      <span className="text-[10px] uppercase tracking-[0.5em] text-[#BFA388] font-bold">
+        The Aerial Vision Portfolio
+      </span>
+      <span className="w-8 h-[1px] bg-[#BFA388]"></span>
+    </div>
+
+    {/* Master Core Headline - Centered & forced on a single line for impact */}
+    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-white serif whitespace-nowrap leading-none mb-4">
+      Aerial <span className="text-[#BFA388]">Solutions.</span>
+    </h1>
+
+    {/* Professional Certified Pilot Badge Anchor */}
+    <div className="mb-8">
+      <span className="text-[8px] tracking-[0.3em] uppercase bg-[#BFA388]/10 text-[#BFA388] px-4 py-1.5 border border-[#BFA388]/20 font-mono font-bold rounded-none">
+        DGCA Certified Pilot Operations
+      </span>
+    </div>
+
+    {/* High-Visibility Balanced Context Subtitle */}
+    <p className="text-white/80 text-sm sm:text-base md:text-lg uppercase tracking-widest font-light leading-relaxed max-w-2xl border-t border-b border-white/5 py-6 px-4">
+      From commercial advertisements to spiritual festivals, we provide total visual coverage across Tamil Nadu.
+    </p>
+  </motion.div>
+</section>
 
       {/* SERVICES LIST */}
       <section className="px-6 md:px-10 max-w-7xl mx-auto">
@@ -139,22 +157,54 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="mt-20 py-32 bg-[#0A0A0A] border-y border-white/5 text-center">
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter serif mb-12">
-            Elevate <br /> <span className="text-[#BFA388]">Your Vision.</span>
-          </h2>
-          <HashLink smooth to="/contact#contact-form">
-            <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(191,163,136,0.3)" }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-[#BFA388] text-black px-12 py-5 text-xs font-black uppercase tracking-[0.3em] hover:bg-white transition-all duration-500 shadow-2xl"
-            >
-              Request a Consultation
-            </motion.button>
-          </HashLink>
-        </motion.div>
-      </section>
+     <section className="relative mt-20 py-32 bg-[#050505] border-y border-white/5 text-center overflow-hidden w-full">
+  
+  {/* 1. AMBIENT STUDIO GLOW - Soft background light focused behind the text */}
+  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#BFA388]/5 blur-[130px] rounded-full pointer-events-none z-0" />
+
+  {/* 2. TECHNICAL BORDER ACCENTS - Reinforces high-end architectural layout */}
+  <div className="absolute top-0 left-12 w-[1px] h-4 bg-[#BFA388]/30" />
+  <div className="absolute bottom-0 right-12 w-[1px] h-4 bg-[#BFA388]/30" />
+
+  {/* 3. INTERFACE BLOCK CONTAINER */}
+  <motion.div 
+    initial={{ opacity: 0, y: 35 }} 
+    whileInView={{ opacity: 1, y: 0 }} 
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center"
+  >
+    {/* Micro-Context Tag */}
+    <div className="flex items-center gap-3 mb-6 justify-center">
+      <span className="w-4 h-[1px] bg-[#BFA388]/60"></span>
+      <span className="text-[9px] uppercase tracking-[0.4em] text-[#BFA388] font-mono font-bold">
+        Next Phase Operations
+      </span>
+      <span className="w-4 h-[1px] bg-[#BFA388]/60"></span>
+    </div>
+
+    {/* Master Core Headline - High impact single-line configuration */}
+    <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-white serif leading-none mb-6">
+      Elevate <span className="text-[#BFA388]">Your Vision.</span>
+    </h2>
+
+    {/* High-Visibility Supporting Subtitle */}
+    <p className="text-white/70 text-[10px] sm:text-xs uppercase tracking-[0.25em] leading-relaxed max-w-md mx-auto mb-12 font-light">
+      Partner with a DGCA certified pilot squad to secure broadcast-grade aerial capture across South India.
+    </p>
+
+    {/* Primary Routing Trigger - Cohesive Curved Polish */}
+    <HashLink smooth to="/contact#contact-form">
+      <motion.button 
+        whileHover={{ scale: 1.03, boxShadow: "0 0 40px rgba(191,163,136,0.3)" }}
+        whileTap={{ scale: 0.97 }}
+        className="bg-[#BFA388] text-black px-14 py-5 rounded-full text-[11px] font-black uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all duration-500 shadow-2xl"
+      >
+        Request a Consultation
+      </motion.button>
+    </HashLink>
+  </motion.div>
+</section>
     </div>
   );
 };

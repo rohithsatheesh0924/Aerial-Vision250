@@ -24,7 +24,7 @@ const Footer = () => {
                 AERIAL
               </span>
               <span className="text-[9px] tracking-[0.4em] uppercase text-[#BFA388] mt-0.5">
-                VISION 250
+                VISIONS
               </span>
             </div>
           </Link>

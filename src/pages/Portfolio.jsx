@@ -3,65 +3,57 @@ import { motion } from 'framer-motion';
 import { NavHashLink as HashLink } from 'react-router-hash-link';
 
 const Portfolio = () => {
-  const portfolioItems = [
-    {
-      id: "01.",
-      title: "Wedding Shoot",
-      category: "TRADITION SHOOT",
-      img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80",
-      gridSpan: "md:col-span-1 md:row-span-1"
-    },
-    {
-      id: "02.",
-      title: "Portrait Shoot",
-      category: "CREATIVE PORTRAITS",
-      img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80",
-      gridSpan: "md:col-span-1 md:row-span-1"
-    },
-    {
-      id: "03.",
-      title: "Couple Sessions",
-      category: "COUPLE SESSIONS",
-      img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=80",
-      gridSpan: "md:col-span-2 md:row-span-1" // WIDE
-    },
-    {
-      id: "04.",
-      title: "Baby Stories",
-      category: "BABY STORIES",
-      img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=80",
-      gridSpan: "md:col-span-1 md:row-span-2" // TALL
-    },
-    {
-      id: "05.",
-      title: "Temple Festival",
-      category: "CULTURAL EVENTS",
-      img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
-      gridSpan: "md:col-span-1 md:row-span-1"
-    },
-    {
-      id: "06.",
-      title: "Real Estate",
-      category: "ARCHITECTURAL",
-      img: "https://images.unsplash.com/photo-1500315331616-db4f707c24d1?auto=format&fit=crop&w=1000&q=80",
-      gridSpan: "md:col-span-1 md:row-span-1"
-    },
-    {
-      id: "07.",
-      title: "Grand Entrance",
-      category: "CINEMATIC",
-      img: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1000&q=80",
-      gridSpan: "md:col-span-2 md:row-span-1" // WIDE
-    },
-    {
-      id: "08.",
-      title: "Family Legacy",
-      category: "PRIVATE EVENTS",
-      img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80",
-      gridSpan: "md:col-span-1 md:row-span-1"
-    }
-  ];
-
+ const portfolioItems = [
+  {
+    id: "01.",
+    title: "Real Estate Shoot",
+    category: "ARCHITECTURAL AERIALS",
+    img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80",
+    gridSpan: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: "02.",
+    title: "Advertising Campaign",
+    category: "COMMERCIAL PRODUCTION",
+    img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80",
+    gridSpan: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: "03.",
+    title: "Marriage Chronicles",
+    category: "WEDDING CINEMATOGRAPHY",
+    img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=80",
+    gridSpan: "md:col-span-2 md:row-span-1" // WIDE
+  },
+  {
+    id: "04.",
+    title: "Temple Festival",
+    category: "CULTURAL SCALE",
+    img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=80",
+    gridSpan: "md:col-span-1 md:row-span-2" // TALL
+  },
+  {
+    id: "05.",
+    title: "Family Gathering",
+    category: "PRIVATE CELEBRATIONS",
+    img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+    gridSpan: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: "06.",
+    title: "Events",
+    category: "CORPORATE OVERVIEW",
+    img: "https://images.unsplash.com/photo-1500315331616-db4f707c24d1?auto=format&fit=crop&w=1000&q=80",
+    gridSpan: "md:col-span-1 md:row-span-1"
+  },
+  {
+    id: "07.",
+    title: "Schools and Colleges Functions",
+    category: "INSTITUTIONAL DOCUMENTATION",
+    img: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1000&q=80",
+    gridSpan: "md:col-span-2 md:row-span-1" // WIDE
+  }
+];
   return (
     <div className="bg-black min-h-screen pt-32 pb-20 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
