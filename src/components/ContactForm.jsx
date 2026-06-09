@@ -37,9 +37,9 @@ const ContactForm = () => {
     setLoading(true);
 
     // Replace these template strings with your specific EmailJS dashboard credentials
-    const SERVICE_ID = "YOUR_EMAILJS_SERVICE_ID";
-    const TEMPLATE_ID = "YOUR_EMAILJS_TEMPLATE_ID";
-    const PUBLIC_KEY = "YOUR_EMAILJS_PUBLIC_KEY";
+    const SERVICE_ID = "service_4whaxqi";
+    const TEMPLATE_ID = "template_acl0onk";
+    const PUBLIC_KEY = "nu56spVqPFU9I0ArF";
 
     try {
       const result = await emailjs.sendForm(
