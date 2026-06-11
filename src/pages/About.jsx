@@ -57,28 +57,7 @@ const About = () => {
     { label: "Cities Served", value: "12+" }
   ];
 
-  const team = [
-    {
-      name: "Murali Krishna",
-      role: "Lead Cinematographer",
-      image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      name: "Arun Kumar",
-      role: "Senior Drone Pilot",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      name: "Sanjay Raj",
-      role: "Drone Tech Engineer",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      name: "Vikram Sethu",
-      role: "Post-Production Lead",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80"
-    }
-  ];
+  
 
   return (
     <div className="bg-black text-white min-h-screen pt-32 pb-20 overflow-x-hidden">
@@ -166,6 +145,8 @@ const About = () => {
   </div>
 </section>
 
+ 
+
       {/* 2. MISSION STATEMENT */}
       <section className="bg-[#0A0A0A] py-32 border-y border-white/5">
         <div className="max-w-5xl mx-auto px-6 text-center">
@@ -183,6 +164,22 @@ const About = () => {
             whileInView={{ width: 96 }}
             className="h-[1px] bg-[#BFA388] mx-auto"
           />
+        </div>
+      </section>
+
+      {/* 4. PERFORMANCE METRICS (Counter Animation) */}
+      <section className="py-24 bg-[#BFA388]">
+        <div className="max-w-7xl mx-auto px-6 md:px-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <h3 className="text-black text-5xl md:text-6xl font-black uppercase tracking-tighter mb-2">
+                  <Counter value={stat.value} />
+                </h3>
+                <p className="text-black/60 text-[10px] uppercase tracking-[0.3em] font-bold">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -225,73 +222,9 @@ const About = () => {
   </motion.div>
 </section>
 
-      {/* 4. PERFORMANCE METRICS (Counter Animation) */}
-      <section className="py-24 bg-[#BFA388]">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <h3 className="text-black text-5xl md:text-6xl font-black uppercase tracking-tighter mb-2">
-                  <Counter value={stat.value} />
-                </h3>
-                <p className="text-black/60 text-[10px] uppercase tracking-[0.3em] font-bold">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
-      {/* 5. TEAM SECTION */}
-      <section id="about" className="py-24 px-6 md:px-10 max-w-7xl mx-auto border-t border-white/5">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="mb-16 text-center md:text-left"
-        >
-          <span className="text-[10px] uppercase tracking-[0.5em] text-[#BFA388] font-bold">The Creative Unit</span>
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter serif mt-4 text-white leading-tight">
-            Aerial Visionaries <br /> <span className="text-[#BFA388]">Behind the Skies</span>
-          </h2>
-          <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-[0.4em] mt-6 max-w-2xl leading-relaxed">
-            A collective of engineers and filmmakers dedicated to pushing the boundaries of aerial visual production and hardware innovation.
-          </p>
-        </motion.div>
-
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          {team.map((member, index) => (
-            <motion.div 
-              key={index}
-              variants={fadeInUp}
-              className="group relative"
-            >
-              <div className="aspect-[3/4] overflow-hidden bg-[#0A0A0A] border border-white/10 relative">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80" />
-                <div className="absolute bottom-0 left-0 p-6 w-full z-10">
-                  <p className="text-[#BFA388] text-[9px] uppercase tracking-[0.3em] font-black mb-2 translate-y-0 opacity-100 transition-all duration-500 group-hover:text-white">
-                    {member.role}
-                  </p>
-                  <h3 className="text-white text-xl font-bold uppercase tracking-widest serif leading-none">
-                    {member.name}
-                  </h3>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
+     
     </div>
   );
 };

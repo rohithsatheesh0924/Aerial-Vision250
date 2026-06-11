@@ -99,7 +99,7 @@ const Home = () => {
       playsInline
       className="w-full h-full object-cover select-none"
     >
-      <source src="./V2.mp4" type="video/mp4" />
+      <source src="./VV.mp4" type="video/mp4" />
     </video>
   </div>
 
