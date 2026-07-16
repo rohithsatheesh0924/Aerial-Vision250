@@ -34,11 +34,13 @@ const wipeReveal = {
 
 const Home = () => {
   const images = [
-    "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1532704101643-77510e3f7739?auto=format&fit=crop&w=600&q=80",
+    "./img-1 (1).png",
+    "./img-1 (2).png",
+    "./img-1 (3).png",
+    "./img-1 (4).png",
+    "./img-1 (5).png",
+    "./img-1 (6).png",
+    "./img-1 (7).png",
   ];
 
   const services = [
@@ -46,33 +48,33 @@ const Home = () => {
       title: "Commercial Ads",
       price: "Premium",
       desc: "Cinematic drone sequences designed for high-conversion brand advertisements and commercial storytelling.",
-      img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80"
+      img: "./img-1 (7).png"
     },
     {
       title: "Real Estate",
       price: "₹8,000+",
       desc: "Architectural aerial photography that highlights property scale and surrounding infrastructure in 4K HDR.",
-      img: "https://images.unsplash.com/photo-1500315331616-db4f707c24d1?auto=format&fit=crop&w=800&q=80"
+      img: "./img-1 (2).png"
     },
     {
       title: "Temple Festivals",
       price: "₹10,000+",
       desc: "Capturing the vibrant divinity and massive cultural scale of Tamil Nadu's festivals from the sky.",
-      img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=800&q=80"
+      img: "./img-1 (4).png"
     },
     {
       title: "Event Coverage",
       price: "₹30,000+",
       desc: "Seamlessly integrating aerial grandeur into weddings and large-scale corporate gatherings.",
-      img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"
+      img: "./img-1 (6).png"
     }
   ];
 
   const slides = [
-    { id: 1, image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80" },
-    { id: 2, image: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1920&q=80" },
-    { id: 3, image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1920&q=80" },
-    { id: 4, image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80" }
+    { id: 1, image: "./img-1 (1).png" },
+    { id: 2, image: "./img-1 (2).png" },
+    { id: 3, image: "./img-1 (3).png" },
+    { id: 4, image: "./img-1 (4).png" }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -253,7 +255,7 @@ const Home = () => {
             style={{ backgroundImage: `url('${slides[currentIndex].image}')` }}
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-black/80 z-20"></div>
+        <div className="absolute inset-0 bg-black/75 z-20"></div>
 
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} className="relative z-30 h-full flex flex-col justify-center items-center text-center px-6">
           <motion.span className="text-[10px] uppercase tracking-[0.5em] text-[#BFA388] font-bold mb-4">

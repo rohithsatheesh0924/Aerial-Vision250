@@ -8,14 +8,14 @@ const Portfolio = () => {
     id: "01.",
     title: "Real Estate Shoot",
     category: "ARCHITECTURAL AERIALS",
-    img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80",
+    img:"./img-1 (2).png",
     gridSpan: "md:col-span-1 md:row-span-1"
   },
   {
     id: "02.",
     title: "Advertising Campaign",
     category: "COMMERCIAL PRODUCTION",
-    img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80",
+      img:"./img-1 (7).png",
     gridSpan: "md:col-span-1 md:row-span-1"
   },
   {
@@ -29,28 +29,28 @@ const Portfolio = () => {
     id: "04.",
     title: "Temple Festival",
     category: "CULTURAL SCALE",
-    img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=80",
+    img: "img-1 (4).png",
     gridSpan: "md:col-span-1 md:row-span-2" // TALL
   },
   {
     id: "05.",
     title: "Family Gathering",
     category: "PRIVATE CELEBRATIONS",
-    img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1000&q=80",
+    img: "img-1 (8).png",
     gridSpan: "md:col-span-1 md:row-span-1"
   },
   {
     id: "06.",
     title: "Events",
     category: "CORPORATE OVERVIEW",
-    img: "https://images.unsplash.com/photo-1500315331616-db4f707c24d1?auto=format&fit=crop&w=1000&q=80",
+    img: "img-1 (8).png",
     gridSpan: "md:col-span-1 md:row-span-1"
   },
   {
     id: "07.",
     title: "Schools and Colleges Functions",
     category: "INSTITUTIONAL DOCUMENTATION",
-    img: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1000&q=80",
+    img: "./img-1 (6).png",
     gridSpan: "md:col-span-2 md:row-span-1" // WIDE
   }
 ];

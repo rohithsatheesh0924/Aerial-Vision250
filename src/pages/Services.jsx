@@ -11,7 +11,7 @@ const ServicesPage = () => {
       price: "₹30,000",
       icon: <PlayCircle className="text-[#BFA388]" size={24} />,
       desc: "High-end cinematic sequences tailored for brand storytelling, business promotion, and high-conversion advertisements.",
-      img: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
+      img:"./img-1 (7).png",
       accent: "Commercial Impact"
     },
     {
@@ -20,7 +20,7 @@ const ServicesPage = () => {
       price: "₹15,000 - ₹30,000",
       icon: <Camera className="text-[#BFA388]" size={24} />,
       desc: "Capturing the grandeur of your special day from the sky, providing a movie-like dimension to your wedding legacy.",
-      img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
+      img:"./img-1 (1).png",
       accent: "Cinematic Grandeur"
     },
     {
@@ -29,7 +29,7 @@ const ServicesPage = () => {
       price: "₹10,000",
       icon: <Tent className="text-[#BFA388]" size={24} />,
       desc: "Documenting the spiritual scale and vibrant cultural colors of temple festivals from a divine aerial perspective.",
-      img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+      img:"./img-1 (4).png",
       accent: "Spiritual Scale"
     },
     {
@@ -38,7 +38,7 @@ const ServicesPage = () => {
       price: "₹8,000 - ₹20,000",
       icon: <Building2 className="text-[#BFA388]" size={24} />,
       desc: "Architectural visuals that highlight property scale and surroundings to create high-impact real estate promotions.",
-      img: "https://images.unsplash.com/photo-1500315331616-db4f707c24d1?auto=format&fit=crop&w=1200&q=80",
+      img:"./img-1 (2).png",
       accent: "Architectural Precision"
     },
     {
@@ -47,7 +47,7 @@ const ServicesPage = () => {
       price: "₹15,000 - ₹30,000",
       icon: <Repeat className="text-[#BFA388]" size={24} />,
       desc: "Regular monthly shooting for construction progress, institutions, or ongoing documentation projects.",
-      img: "https://images.unsplash.com/photo-1532704101643-77510e3f7739?auto=format&fit=crop&w=1200&q=80",
+      img:"./img-1 (5).png",
       accent: "Long-term Documentation"
     },
     {
@@ -56,7 +56,7 @@ const ServicesPage = () => {
       price: "₹7,000",
       icon: <Users className="text-[#BFA388]" size={24} />,
       desc: "Beautifully captured private moments and group gatherings, ensuring your family memories are truly timeless.",
-      img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80",
+      img:"./img-1 (8).png",
       accent: "Timeless Memories"
     }
   ];
